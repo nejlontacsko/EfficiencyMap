@@ -1,0 +1,40 @@
+﻿  Compiling CUDA source file kernel.cu...
+  
+  F:\sources\CudaRuntime1\CudaRuntime1>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\bin\nvcc.exe" -gencode=arch=compute_52,code=\"sm_52,compute_52\" --use-local-env -ccbin "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\bin\HostX64\x64" -x cu   -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include"  -G   --keep-dir x64\Debug  -maxrregcount=0   --machine 64 --compile -cudart static  -g  -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -Xcompiler "/Fdx64\Debug\vc143.pdb" -o F:\sources\CudaRuntime1\CudaRuntime1\x64\Debug\kernel.cu.obj "F:\sources\CudaRuntime1\CudaRuntime1\kernel.cu" 
+F:\sources\CudaRuntime1\CudaRuntime1\kernel.cu(87): error : no instance of overloaded function "cudaMallocManaged" matches the argument list
+              argument types are: (float *, unsigned long long)
+        cudaMallocManaged(&d_Mdemand, numValues * sizeof(float));
+        ^
+  
+F:\sources\CudaRuntime1\CudaRuntime1\kernel.cu(88): error : no instance of overloaded function "cudaMallocManaged" matches the argument list
+              argument types are: (float *, unsigned long long)
+        cudaMallocManaged(&d_Omega, numValues * sizeof(float));
+        ^
+  
+F:\sources\CudaRuntime1\CudaRuntime1\kernel.cu(95): error : identifier "p_values" is undefined
+        calcValues << <numBlocks, threadsPerBlock >> > (p_values, m_values, m, c_F, r_dk, i_gbx);
+                                                        ^
+  
+F:\sources\CudaRuntime1\CudaRuntime1\kernel.cu(95): error : identifier "m_values" is undefined
+        calcValues << <numBlocks, threadsPerBlock >> > (p_values, m_values, m, c_F, r_dk, i_gbx);
+                                                                  ^
+  
+F:\sources\CudaRuntime1\CudaRuntime1\kernel.cu(95): error : identifier "c_F" is undefined
+        calcValues << <numBlocks, threadsPerBlock >> > (p_values, m_values, m, c_F, r_dk, i_gbx);
+                                                                               ^
+  
+F:\sources\CudaRuntime1\CudaRuntime1\kernel.cu(95): error : identifier "r_dk" is undefined
+        calcValues << <numBlocks, threadsPerBlock >> > (p_values, m_values, m, c_F, r_dk, i_gbx);
+                                                                                    ^
+  
+F:\sources\CudaRuntime1\CudaRuntime1\kernel.cu(95): error : identifier "i_gbx" is undefined
+        calcValues << <numBlocks, threadsPerBlock >> > (p_values, m_values, m, c_F, r_dk, i_gbx);
+                                                                                          ^
+  
+F:\sources\CudaRuntime1\CudaRuntime1\kernel.cu(95): error : identifier "calcValues" is undefined
+        calcValues << <numBlocks, threadsPerBlock >> > (p_values, m_values, m, c_F, r_dk, i_gbx);
+        ^
+  
+  8 errors detected in the compilation of "F:/sources/CudaRuntime1/CudaRuntime1/kernel.cu".
+  kernel.cu
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\BuildCustomizations\CUDA 12.1.targets(799,9): error MSB3721: The command ""C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\bin\nvcc.exe" -gencode=arch=compute_52,code=\"sm_52,compute_52\" --use-local-env -ccbin "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\bin\HostX64\x64" -x cu   -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\include"  -G   --keep-dir x64\Debug  -maxrregcount=0   --machine 64 --compile -cudart static  -g  -DWIN32 -DWIN64 -D_DEBUG -D_CONSOLE -D_MBCS -Xcompiler "/EHsc /W3 /nologo /Od /FS /Zi /RTC1 /MDd " -Xcompiler "/Fdx64\Debug\vc143.pdb" -o F:\sources\CudaRuntime1\CudaRuntime1\x64\Debug\kernel.cu.obj "F:\sources\CudaRuntime1\CudaRuntime1\kernel.cu"" exited with code 2.
